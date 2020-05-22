@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button id="mei">梅花</button>
+    <button id="lan">兰花</button>
+    <div>早上好</div>
+    <img src="./img/mei.jfif" alt="" title="梅花三弄" id="img">
+    <img src="./img/morning.jpg" alt="" id="image">
+    <br>
+    <button id="but">按钮</button>
+    <input type="text" name="" id="inp">
+    <script>
+        var but = document.getElementById('but');
+        var inp = document.getElementById('inp');
+        but.onclick = function(){
+            inp.value = 'beidianj';
+            //disabled  禁用按钮
+            this.disabled = true;
+        }
+
+
+
+        var mei = document.getElementById('mei');
+        var lan = document.getElementById('lan');
+        var img = document.getElementById('img');
+        mei.onclick = function(){
+            img.src = './img/mei.jfif'
+            img.title = '梅花三弄'
+        }
+        lan.onclick = function(){
+            img.src = './img/lan.jpg'
+            img.title = '吐气如兰'
+        }
+        //根据不同时间显示不同图片
+        var di = document.querySelector('div');
+        var image = document.getElementById('image');
+        var day = new Date();
+        var tim = day.getHours();
+        if(tim<12){
+            image.src = './img/morning.jpg'
+            di.innerHTML = '早上好'
+        }else if (tim<18){
+            image.src = './img/after.jpg'
+            di.innerHTML = '中午好'
+        }else{
+            image.src = './img/night.jpg'
+            di.innerHTML = '晚安'
+        }
+    </script>
+</body>
+</html>

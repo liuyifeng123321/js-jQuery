@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击获取当亲啊时间</button>
+    <div>点击后改变时间</div>
+    <p>自动显示当前系统时间</p>
+    <p id="pp">
+        <strong>html</strong> 
+    </p>
+    <script>
+        //点击按钮弹出对话框
+        //事件有三不凡组成 1。事件源  事件类型  事件处理程序 成为事件三要素
+        //事件源 事件被触发的对象
+        var btn = document.getElementById('btn');
+        //2.事件类型 如何触发 什么事件
+        //3.事件处理程序 通过函数赋值方式完成
+        btn.onclick = function() {
+            alert('点击事件')
+        }
+
+        var change = document.querySelector('div');
+        btn.onclick = function() {
+            //innerText 更改内容
+            change.innerText = nowTime();
+        }
+        var p = document.querySelector('p')
+        p.innerText = nowTime();
+        function nowTime() {
+            var date = new Date(); 
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var dates = date.getDate();
+             var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六',] //将星期几存储到数组中
+            var day = date.getDay();
+            return '今天使' + year + '年' + month + '月' + dates + '日' + arr[day];
+
+        }
+        //innerText与innerHtml 区别在于是否识别HTML标签
+        var inh = document.querySelector('#pp');
+        console.log(inh.innerHTML);
+        console.log(inh.innerText);
+    </script>
+</body>
+</html>

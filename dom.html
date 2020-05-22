@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="time">2020-02-13</div>
+    <ul>
+        <li>123</li>
+        <li>1234</li>
+        <li>1235</li>
+        <li>1236</li>
+    </ul>
+    <ul id="nav">
+        <li>汉字</li>
+        <li>汉字</li>
+        <li>汉字</li>
+        <li>汉字</li>
+    </ul>
+
+    <div class="box">
+        盒子1
+        <div class="box">
+            h2
+        </div>
+        <ul id="navs">
+            <li>
+                <p>fouwe</p>
+            </li>
+        </ul>
+    </div>
+    <script>
+        //
+        var timer = document.getElementById('time')
+        console.log(timer);
+        //console.dir 打印我们返回的元素对象，更好的查看里面的属性和方法
+        console.dir(timer);
+        //通过标签获取  返回的是以数组的方式存储
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+        //遍历输出
+        for(var i=0; i<lis.length;i++){
+            console.log(lis[i]);
+            
+        }
+        //获取特定的标签
+        var els = document.getElementById('nav')
+        var bt = els.getElementsByTagName('li')
+        console.log(bt);
+       //querySelector  返回选择器的第一个元素对象
+       var box = document.querySelector('.box')
+       console.log(box);
+       var ids = document.querySelector('#nav');
+       console.log(ids);
+       var tab = document.querySelector('p')
+       console.log(tab);
+       //querySelectorAll  返回选择器的所有元素对象 集合
+       var boxAll = document.querySelectorAll('.box')
+       console.log(boxAll);
+       
+    </script>
+</body>
+</html>

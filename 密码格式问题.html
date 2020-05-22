@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            margin: 100px auto;
+        }
+        p{
+            display: inline-block;
+        }
+        .wrong{
+            color: red;
+        }
+        .right{
+            color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" name="" id="" class="inp">
+        <p class="massage">请输入密码</p>
+    </div>
+    <script>
+        let inp = document.querySelector('.inp')
+        let massage = document.querySelector('.massage')
+        inp.onblur = function(){
+            if(this.value.length < 6 || this.value.length > 16){
+                massage.className = 'massage wrong';
+                massage.innerHTML = '输入错误请输入6-16位';
+            }else{
+                massage.className = 'massage right';
+                massage.innerHTML = '输入正确'
+            }
+        }
+    </script>
+</body>
+</html>
